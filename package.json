@@ -4,6 +4,10 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
+    "css-loader": "^6.6.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
     "vue": "^3.2.31",
     "vue-loader": "^17.0.0",
     "vue-template-compiler": "^2.6.14",

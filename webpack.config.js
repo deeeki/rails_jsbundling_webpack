@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     filename: "[name].js",
-    sourceMapFilename: "[name].js.map",
+    sourceMapFilename: "[file].map[query]",
     path: path.resolve(__dirname, "app/assets/builds"),
   },
   resolve: {

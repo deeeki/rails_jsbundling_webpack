@@ -26,6 +26,22 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
+      {
+        test: /\.(bmp|gif|jpe?g|png|tiff|ico|avif|webp|eot|otf|ttf|woff|woff2|svg)$/,
+        exclude: /\.(js|mjs|jsx|ts|tsx)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: (pathData) => {
+            const folders = path.dirname(pathData.filename)
+              .replace(`app/javascript/`, '')
+              .split('/')
+              .slice(1)
+
+            const foldersWithStatic = path.join('static', ...folders)
+            return `${foldersWithStatic}/[name][ext][query]`
+          }
+        }
+      },
     ]
   },
   plugins: [

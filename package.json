@@ -4,8 +4,11 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
+    "vue": "^3.2.31",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2"
   },
-  "scripts": { "build": "webpack --config webpack.config.js" }
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  }
 }

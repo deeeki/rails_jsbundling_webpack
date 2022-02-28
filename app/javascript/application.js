@@ -4,6 +4,8 @@ import "./controllers"
 
 import { createApp } from 'vue'
 
+import 'stylesheets/application'
+
 const context = require.context(
   'components',
   true,

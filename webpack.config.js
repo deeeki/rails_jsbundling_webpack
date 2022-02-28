@@ -1,6 +1,7 @@
 const path    = require("path")
 const webpack = require("webpack")
 const { VueLoaderPlugin } = require('vue-loader')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: "production",
@@ -27,6 +28,10 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+      },
+      {
         test: /\.(bmp|gif|jpe?g|png|tiff|ico|avif|webp|eot|otf|ttf|woff|woff2|svg)$/,
         exclude: /\.(js|mjs|jsx|ts|tsx)$/,
         type: 'asset/resource',
@@ -48,6 +53,7 @@ module.exports = {
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin()
   ]
 }

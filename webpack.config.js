@@ -2,6 +2,7 @@ const path    = require("path")
 const webpack = require("webpack")
 const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const globImporter = require('node-sass-glob-importer')
 
 module.exports = {
   mode: "production",
@@ -29,7 +30,16 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                importer: globImporter()
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.(bmp|gif|jpe?g|png|tiff|ico|avif|webp|eot|otf|ttf|woff|woff2|svg)$/,

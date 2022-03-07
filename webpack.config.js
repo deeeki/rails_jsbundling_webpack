@@ -11,7 +11,7 @@ module.exports = {
     application: "./app/javascript/application.js"
   },
   output: {
-    filename: "[name].js",
+    filename: "[name].js.erb",
     sourceMapFilename: "[file].map[query]",
     path: path.resolve(__dirname, "app/assets/builds"),
   },

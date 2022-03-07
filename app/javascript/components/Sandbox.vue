@@ -2,7 +2,7 @@
   <h2>
     {{ title }}
   </h2>
-  <img src="../images/rails/rails_welcome.png" width="100" />
+  <img src="<%= asset_path('static/rails/rails_welcome.png') %>" width="100" />
 </template>
 
 <script lang="ts">
